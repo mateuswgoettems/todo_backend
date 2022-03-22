@@ -1,0 +1,30 @@
+version: '3'
+services:
+  backend:
+    image: mateuswelter01/projects:todo_backend
+    networks:
+      - todo
+    ports:
+      - 3005:3000
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.role == worker]
+      restart_policy:
+        condition: on-failure
+  frontend:
+    image: mateuswelter01/projects:todo_frontend
+    networks:
+      - todo
+    ports:
+      - 3006:8080
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.role == worker]
+      restart_policy:
+        condition: on-failure
+
+networks:
+  todo:
+    driver: overlay
