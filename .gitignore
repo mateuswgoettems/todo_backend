@@ -1,0 +1,9 @@
+# Node Modules
+node_modules
+
+#VS Code
+.vscode
+
+#Env 
+.env.prod
+.env.dev
