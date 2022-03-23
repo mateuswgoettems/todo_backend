@@ -49,7 +49,7 @@ jobs:
     steps:
       - name: pull image in workers
         run: |
-          /home/ubuntu/n/scripts/deploy-to-swarm.sh
+          /home/ubuntu/todo_backend/deploy-to-swarm.sh
       - name: pull the compose file in manager
         run: |
-          docker service update --force api-logs_api-logs
+          docker service update --force todo_backend
