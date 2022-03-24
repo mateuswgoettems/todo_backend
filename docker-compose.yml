@@ -16,6 +16,8 @@ services:
     image: mateuswelter01/projects:todo_frontend
     networks:
       - todo
+    environment:
+      - BACKEND_URL=$BACKEND_URL
     ports:
       - 3006:8080
     deploy:
