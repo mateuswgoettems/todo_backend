@@ -17,7 +17,7 @@ services:
     networks:
       - todo
     ports:
-      - 3006:8080
+      - 3006:80
     deploy:
       mode: global
       placement:
